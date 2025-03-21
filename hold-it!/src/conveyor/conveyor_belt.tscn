@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://blwkon3ljy6cl"]
+[gd_scene load_steps=8 format=3 uid="uid://blwkon3ljy6cl"]
 
 [ext_resource type="Texture2D" uid="uid://b7h7h7q383onp" path="res://src/conveyor/ConveyorBelt.png" id="1_8lmab"]
+[ext_resource type="Script" path="res://src/conveyor/conveyor_belt.gd" id="1_cv484"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psv0d"]
 size = Vector2(343, 28)
@@ -48,6 +49,7 @@ _data = {
 
 [node name="ConveyorBelt" type="StaticBody2D"]
 collision_mask = 4
+script = ExtResource("1_cv484")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

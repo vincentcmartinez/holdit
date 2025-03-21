@@ -8,6 +8,7 @@
 script = ExtResource("1_ogvad")
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
+position = Vector2(338, 214)
 
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(32, 213)
