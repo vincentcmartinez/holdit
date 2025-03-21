@@ -1,14 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b02npsu86bos3"]
+[gd_scene load_steps=3 format=3 uid="uid://b02npsu86bos3"]
 
 [ext_resource type="Script" path="res://src/toys/toy.gd" id="1_rb4ru"]
+[ext_resource type="PackedScene" uid="uid://b7cda4sn3nkoq" path="res://src/toys/toy_part.tscn" id="2_fcewj"]
 
 [node name="Toy" type="RigidBody2D"]
 collision_layer = 2
 script = ExtResource("1_rb4ru")
+pieces = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Parts" type="Node" parent="."]
+
+[node name="ToyPart" parent="Parts" instance=ExtResource("2_fcewj")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
