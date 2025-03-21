@@ -16,8 +16,14 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://src/game container/signalbus.gd"
+
 [display]
 
+window/size/viewport_width=512
+window/size/viewport_height=288
 window/stretch/mode="viewport"
 
 [input]

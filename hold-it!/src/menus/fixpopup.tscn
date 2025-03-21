@@ -3,15 +3,31 @@
 [ext_resource type="Script" path="res://src/menus/fixpopup.gd" id="1_8ttp7"]
 
 [node name="Fixpopup" type="Control"]
+custom_minimum_size = Vector2(64, 160)
 layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8ttp7")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8ttp7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Button" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
