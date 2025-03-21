@@ -5,11 +5,19 @@
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_4iuuo")
 
-[node name="Button" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="."]
 offset_left = 466.0
 offset_top = 190.0
 offset_right = 594.0
 offset_bottom = 256.0
 text = "Play"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 280.0
+offset_right = 615.0
+offset_bottom = 387.0
+text = "quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
