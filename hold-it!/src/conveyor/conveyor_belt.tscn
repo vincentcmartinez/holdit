@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://blwkon3ljy6cl"]
+
+[ext_resource type="Texture2D" uid="uid://b7h7h7q383onp" path="res://src/conveyor/ConveyorBelt.png" id="1_8lmab"]
+[ext_resource type="Script" path="res://src/conveyor/conveyor_belt.gd" id="1_cv484"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psv0d"]
+size = Vector2(455.5, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fijah"]
+size = Vector2(455.5, 21.25)
+
+[sub_resource type="Animation" id="Animation_3f51g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2vc7r"]
+resource_name = "move"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yq4g0"]
+_data = {
+"RESET": SubResource("Animation_3f51g"),
+"move": SubResource("Animation_2vc7r")
+}
+
+[node name="ConveyorBelt" type="StaticBody2D"]
+collision_mask = 4
+script = ExtResource("1_cv484")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.35764, 1.35764)
+texture = ExtResource("1_8lmab")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-104.75, 67.5)
+shape = SubResource("RectangleShape2D_psv0d")
+
+[node name="ConveyorDetector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorDetector"]
+position = Vector2(-104.75, 39)
+shape = SubResource("RectangleShape2D_fijah")
+debug_color = Color(0.825627, 0.324785, 0.594709, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yq4g0")
+}
