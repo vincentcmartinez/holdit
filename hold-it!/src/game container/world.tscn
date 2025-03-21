@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=5 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://bhpajphsy41nw" path="res://src/toys/toy_robot.tscn" id="2_c3sp0"]
+[ext_resource type="PackedScene" uid="uid://dsqtsxji7wv37" path="res://src/game container/button.tscn" id="3_b6i4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psv0d"]
 size = Vector2(770, 140)
@@ -24,3 +25,5 @@ shape = SubResource("RectangleShape2D_psv0d")
 
 [node name="ToyRobot" parent="." instance=ExtResource("2_c3sp0")]
 position = Vector2(242, 58)
+
+[node name="Button" parent="." instance=ExtResource("3_b6i4n")]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsqtsxji7wv37"]
+
+[ext_resource type="Script" path="res://src/game container/button.gd" id="1_qecbr"]
+[ext_resource type="Texture2D" uid="uid://cgo0mmocil04n" path="res://src/assets/HOLD_IT_BUTTON-Sheet.png" id="1_r1f1i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvaia"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvxkf"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cnsd"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ok3"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjrxk"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xubjq"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35tbp"]
+atlas = ExtResource("1_r1f1i")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ilde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvaia")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvxkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cnsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6ok3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjrxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xubjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35tbp")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[node name="Button" type="CanvasLayer"]
+script = ExtResource("1_qecbr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, 600)
+sprite_frames = SubResource("SpriteFrames_0ilde")
+animation = &"idle"
