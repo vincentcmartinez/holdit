@@ -1,14 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=6 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
+[ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
 [ext_resource type="PackedScene" uid="uid://pqo80022h03m" path="res://src/toys/toy_spawner.tscn" id="2_m53fk"]
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="3_akmhw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psv0d"]
-size = Vector2(770, 140)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fijah"]
-size = Vector2(751, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
@@ -16,27 +11,8 @@ size = Vector2(122, 89)
 [node name="World" type="Node2D"]
 script = ExtResource("1_ogvad")
 
-[node name="ConveyorBelt" type="StaticBody2D" parent="."]
-position = Vector2(24, 45)
-scale = Vector2(0.4, 0.4)
-collision_mask = 4
-
-[node name="ColorRect" type="ColorRect" parent="ConveyorBelt"]
-offset_left = -61.0
-offset_top = 310.0
-offset_right = 697.0
-offset_bottom = 508.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBelt"]
-position = Vector2(312, 382)
-shape = SubResource("RectangleShape2D_psv0d")
-
-[node name="ConveyorDetector" type="Area2D" parent="ConveyorBelt"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBelt/ConveyorDetector"]
-position = Vector2(322, 345)
-shape = SubResource("RectangleShape2D_fijah")
+[node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
+position = Vector2(222, 138)
 
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(3, 137)
