@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b7cda4sn3nkoq" path="res://src/toys/toy_part.tscn" id="2_fcewj"]
 
 [node name="Toy" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 4
 script = ExtResource("1_rb4ru")
 pieces = null
 
@@ -12,9 +12,12 @@ pieces = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="Parts" type="Node" parent="."]
+[node name="ConveyorBeltArea" type="Area2D" parent="."]
+collision_layer = 2
 
-[node name="ToyPart" parent="Parts" instance=ExtResource("2_fcewj")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBeltArea"]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="ConveyorBeltArea" to="." method="_on_conveyor_belt_area_area_entered"]
+[connection signal="area_exited" from="ConveyorBeltArea" to="." method="_on_conveyor_belt_area_area_exited"]
