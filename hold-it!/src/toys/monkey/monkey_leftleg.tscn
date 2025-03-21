@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://4yk5wmeifr61"]
+
+[ext_resource type="Script" path="res://src/toys/toy_part.gd" id="1_2ms3j"]
+[ext_resource type="Texture2D" uid="uid://x0dwjw2e7um" path="res://src/sprites/toys/monkey/monkey_leftleg.png" id="2_tnqyx"]
+
+[node name="Monkeyleftleg" type="Node2D"]
+script = ExtResource("1_2ms3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tnqyx")

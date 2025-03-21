@@ -1,17 +1,16 @@
 extends Node2D
 class_name ToySpawner
 
-@onready var toy_robot = preload("res://src/toys/toy_robot.tscn")
-
-@onready var toys = [toy_robot]
+@onready var toy_robot = preload("res://src/toys/robot/toy_robot.tscn")
+@onready var toy_monkey = preload("res://src/toys/monkey/toy_monkey.tscn")
+@onready var toys = [toy_monkey]
 
 func _physics_process(delta: float) -> void:
 	pass
 	
 func spawn_random_toy():
 	var toy = toys.pick_random().instantiate()
-	toy.global_position = self.global_position
-	get_tree().get_root().get_node("GameContainer/World").add_child(toy)
+	add_child(toy)
 	toy.apply_central_impulse(Vector2(200,-100))
 
 func _on_spawn_timer_timeout() -> void:

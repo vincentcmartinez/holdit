@@ -28,5 +28,5 @@ size_flags_vertical = 6
 text = "settings
 "
 
-[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_button_pressed"]
