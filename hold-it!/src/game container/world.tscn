@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=9 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
 [ext_resource type="PackedScene" uid="uid://pqo80022h03m" path="res://src/toys/toy_spawner.tscn" id="2_m53fk"]
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="3_akmhw"]
 [ext_resource type="PackedScene" uid="uid://dsqtsxji7wv37" path="res://src/game container/button.tscn" id="5_uiow5"]
+[ext_resource type="Script" path="res://src/game container/finishline.gd" id="6_iv6sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qajwm"]
+size = Vector2(20, 133)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ogvad")
@@ -29,5 +33,13 @@ shape = SubResource("RectangleShape2D_lyqfa")
 
 [node name="Button" parent="." instance=ExtResource("5_uiow5")]
 position = Vector2(3, -343)
+
+[node name="finishline" type="Area2D" parent="."]
+position = Vector2(13, -1)
+script = ExtResource("6_iv6sq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finishline"]
+position = Vector2(359, 127)
+shape = SubResource("RectangleShape2D_qajwm")
 
 [connection signal="body_entered" from="ToyBox" to="ToyBox" method="_on_body_entered"]

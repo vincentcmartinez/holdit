@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fd62s2x3m60g"]
+[gd_scene load_steps=10 format=3 uid="uid://fd62s2x3m60g"]
 
 [ext_resource type="PackedScene" uid="uid://b02npsu86bos3" path="res://src/toys/toy.tscn" id="1_dbqx1"]
 [ext_resource type="Texture2D" uid="uid://ulgcdbh1cpkg" path="res://src/sprites/toys/monkey/monkey_base.png" id="2_le3w8"]
@@ -7,25 +7,29 @@
 [ext_resource type="PackedScene" uid="uid://dtv32lc0m0idw" path="res://src/toys/monkey/monkey_rightleg.tscn" id="5_g475q"]
 [ext_resource type="PackedScene" uid="uid://4yk5wmeifr61" path="res://src/toys/monkey/monkey_leftleg.tscn" id="6_fhor6"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_etj1t"]
+resource_local_to_scene = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x70rd"]
-size = Vector2(59, 58)
+size = Vector2(36, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1y1"]
-size = Vector2(60, 66)
+size = Vector2(39, 52)
 
 [node name="ToyMonkey" instance=ExtResource("1_dbqx1")]
 
 [node name="Base" parent="." index="0"]
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_etj1t")
 scale = Vector2(2, 2)
 texture = ExtResource("2_le3w8")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-0.5, -3)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_x70rd")
 
 [node name="CollisionShape2D" parent="ConveyorBeltArea" index="0"]
-position = Vector2(-1, 0)
+position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_uh1y1")
 
 [node name="MonkeyRightarm" parent="Parts" index="0" instance=ExtResource("3_5576m")]

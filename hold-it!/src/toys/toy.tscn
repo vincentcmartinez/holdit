@@ -7,6 +7,7 @@ friction = 0.03
 
 [node name="Toy" type="RigidBody2D"]
 collision_layer = 4
+input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_qvy8e")
 script = ExtResource("1_rb4ru")
 
