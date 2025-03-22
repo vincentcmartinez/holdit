@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx73n3whkpfvq"]
+
+[ext_resource type="Script" path="res://src/Press/hydraulic_press.gd" id="1_0p67a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qjiw"]
+size = Vector2(122, 205)
+
+[node name="HydraulicPress" type="Node2D"]
+position = Vector2(240, 119)
+script = ExtResource("1_0p67a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -57.0
+offset_top = -96.0
+offset_right = 56.0
+offset_bottom = 103.0
+pivot_offset = Vector2(58, 96)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7qjiw")
