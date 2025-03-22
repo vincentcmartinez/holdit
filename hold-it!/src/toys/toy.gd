@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 	return
 func _ready() -> void:
 	add_to_group("Toy")
+	SignalBus.connect("hold_it", pause)
 	return
 
 func evaluate():
@@ -34,14 +35,11 @@ func die():
 	pass # Replace with function body.
 
 
-
-func _physics_process(delta: float) -> void:
-	if(!paused):
-		position.x += 1
-
 func pause():
-	paused = true
-	
+	freeze = true
+
+func unpause():
+	freeze = false
 	###
 	### code to run minigame?
 	###

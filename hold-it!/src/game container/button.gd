@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 @onready var sprite : AnimatedSprite2D 
 @onready var paused : bool = false
@@ -10,12 +10,13 @@ func _ready() -> void:
 		
 func _input(event):
 	if(event.is_action_pressed("space") && !get_tree().paused && !paused):
-		sprite.play("pressed")
-		get_tree().call_group("Toy", "pause")
-		paused = true
+		hold_it()
 	if(event.is_action_pressed("left_click") && !get_tree().paused && !paused):
 		var pos_diff = abs(get_viewport().get_mouse_position() - sprite.global_position)
 		if(pos_diff.x <= 32 and pos_diff.y <= 32):
-			sprite.play("pressed")
-			get_tree().call_group("Toy", "pause")
-			paused = true
+			hold_it()
+
+func hold_it():
+	sprite.play("pressed")
+	SignalBus.emit_signal("hold_it")
+	paused = true
