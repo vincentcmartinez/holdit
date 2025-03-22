@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	SignalBus.connect("hold_it", _on_hold_it)
+	SignalBus.connect("minigame_finished", _on_minigame_finished)
 
 func spawn_random_toy():
 	var toy = toys.pick_random().instantiate()
@@ -22,3 +23,6 @@ func _on_spawn_timer_timeout() -> void:
 
 func _on_hold_it():
 	spawn_timer.paused = true
+
+func _on_minigame_finished():
+	spawn_timer.paused = false

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*res://src/game container/signalbus.gd"
+GameInfo="*res://game_info.gd"
 
 [display]
 

@@ -1,14 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b02npsu86bos3"]
+[gd_scene load_steps=2 format=3 uid="uid://b02npsu86bos3"]
 
 [ext_resource type="Script" path="res://src/toys/toy.gd" id="1_rb4ru"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qvy8e"]
-friction = 0.03
 
 [node name="Toy" type="RigidBody2D"]
 collision_layer = 4
 input_pickable = true
-physics_material_override = SubResource("PhysicsMaterial_qvy8e")
 script = ExtResource("1_rb4ru")
 
 [node name="Base" type="Sprite2D" parent="."]

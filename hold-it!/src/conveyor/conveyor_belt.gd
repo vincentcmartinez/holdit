@@ -7,6 +7,7 @@ class_name ConveyorBelt
 func _ready() -> void:
 	animPlayer.play("move")
 	SignalBus.connect("hold_it", toggleAnimation)
+	SignalBus.connect("minigame_finished", toggleAnimation)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

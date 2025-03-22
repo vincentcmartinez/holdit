@@ -1,8 +1,8 @@
-extends Node2D
-class_name GameContainer
+class_name Gamecontainer extends Node2D
 
 @onready var main_menu_scene = preload("res://src/menus/main_menu.tscn")
 @onready var world_scene = preload("res://src/game container/world.tscn")
+var minigaming = false
 
 func _ready() -> void:
 	spawn_main_menu()

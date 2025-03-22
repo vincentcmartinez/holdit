@@ -9,40 +9,43 @@ class_name Toy
 var spawn_cooldown = true
 var highlighted = false
 var crossed_finish = false
+var speed = 0
 @onready var popup = preload("res://src/menus/fixpopup.tscn")
 
 func _physics_process(delta: float) -> void:
-	#if on_conveyor_belt:
-		#position.x += 1
+	position.x += speed
 	return
 func _ready() -> void:
 	add_to_group("Toy")
 	SignalBus.connect("hold_it", pause)
+	SignalBus.connect("minigame_finished", unpause)
 	#await get_tree().create_timer(0.5).timeout
 	#spawn_cooldown = false
 	return
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_released("left_click"):
+	if event.is_action_released("left_click") and GameInfo.paused:
 		if highlighted and can_be_selected():
-			return # replace with popup menu
+			open_panel()
+
 func evaluate():
 	for part in parts:
 		if not part.valid:
-			SignalBus.emit_signal("life_lost")
+			return false
 	return true
 	
 func fix(part: ToyPart) -> void:
-	part.valid = true
-	if position.y > 500:
-		queue_free()
+	part.set_valid()
 
 func _on_conveyor_belt_area_area_exited(area: Area2D) -> void:
 	evaluate()
 func _on_conveyor_belt_area_area_entered(area: Area2D) -> void:
 	spawn_cooldown = false
+	speed = 5
 	if area is FinishLine:
 		crossed_finish = true
+		if not evaluate():
+			SignalBus.emit_signal("life_lost")
 
 func die():
 	await get_tree().create_timer(1).timeout
@@ -52,15 +55,14 @@ func die():
 
 func pause():
 	# for now
-	open_panel()
 	freeze = true
+	speed = 0
 	
 
 func unpause():
 	freeze = false
-	###
-	### code to run minigame?
-	###
+	speed = 5
+
 
 func highlight():
 	base.material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
@@ -68,6 +70,7 @@ func highlight():
 func unhighlight():
 	base.material.blend_mode = CanvasItemMaterial.BLEND_MODE_MIX
 	highlighted = false
+
 func _on_mouse_entered() -> void:
 	if not highlighted:
 		if can_be_selected():
@@ -79,8 +82,9 @@ func _on_mouse_exited() -> void:
 		unhighlight()
 
 func can_be_selected() -> bool:
-	return not spawn_cooldown and not crossed_finish # can be selected as long as its not falling
+	return not spawn_cooldown and not crossed_finish and not GameInfo.minigaming# can be selected as long as its not falling
 	
 func open_panel():
 	var cur_popup = popup.instantiate()
+	cur_popup.set_toy(self)
 	add_child(cur_popup)

@@ -1,14 +1,18 @@
 class_name PartButton extends Button
+@onready var texture_rect: TextureRect = $TextureRect
 
 var part
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	custom_minimum_size = Vector2(0,32)
-	self.connect("button_pressed", _on_button_pressed)
+	self.connect("pressed", _on_button_pressed)
 	pass # Replace with function body.
 
 func set_part(newpart:ToyPart):
 	part = newpart
+	texture_rect.texture = part.part_sprite.texture.duplicate()
+	texture_rect.scale = Vector2(2,2)
+	#add_child(part.part_sprite.duplicate(DUPLICATE_USE_INSTANTIATION))
 	return
 
 func _on_button_pressed():
