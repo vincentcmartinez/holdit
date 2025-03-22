@@ -1,14 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=17 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
 [ext_resource type="Texture2D" uid="uid://dfpjamq37uy80" path="res://src/sprites/world/platform.png" id="2_6oxbr"]
 [ext_resource type="PackedScene" uid="uid://pqo80022h03m" path="res://src/toys/toy_spawner.tscn" id="2_m53fk"]
+[ext_resource type="Texture2D" uid="uid://c2yo4o0su6sk6" path="res://src/sprites/world/bg.png" id="2_xuj56"]
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="3_akmhw"]
 [ext_resource type="PackedScene" uid="uid://dsqtsxji7wv37" path="res://src/game container/button.tscn" id="5_uiow5"]
+[ext_resource type="PackedScene" uid="uid://cfjojv4e5mcof" path="res://src/sprites/world/pipes.tscn" id="6_ilpxg"]
 [ext_resource type="Script" path="res://src/game container/finishline.gd" id="6_iv6sq"]
+[ext_resource type="PackedScene" uid="uid://dmxnfmtpbdj5b" path="res://src/sprites/world/notlemonade.tscn" id="7_3lbqp"]
 [ext_resource type="Texture2D" uid="uid://cwcdg2vknfne4" path="res://src/conveyor/Computer.png" id="7_rarj2"]
 [ext_resource type="PackedScene" uid="uid://dij0jdybkv3i" path="res://src/game container/trash_press.tscn" id="8_64byy"]
+[ext_resource type="PackedScene" uid="uid://dty7w8kfg4xdw" path="res://src/sprites/world/stopmonitor.tscn" id="11_3nqr1"]
+[ext_resource type="PackedScene" uid="uid://778i4ebgyodb" path="res://src/sprites/world/destroymonitor.tscn" id="12_xhb1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
@@ -17,14 +22,37 @@ size = Vector2(122, 89)
 size = Vector2(20, 133)
 
 [node name="World" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_ogvad")
 
-[node name="Platform" type="Sprite2D" parent="."]
+[node name="Background2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BackgroundImage" type="TextureRect" parent="Background2"]
+z_index = -1
+texture_filter = 1
+offset_right = 512.0
+offset_bottom = 288.0
+texture = ExtResource("2_xuj56")
+
+[node name="Platform" type="Sprite2D" parent="Background2"]
 position = Vector2(256, 144)
 texture = ExtResource("2_6oxbr")
 
+[node name="StopMonitor" parent="Background2" instance=ExtResource("11_3nqr1")]
+position = Vector2(138, 145)
+
+[node name="Monitor" parent="Background2" instance=ExtResource("12_xhb1n")]
+position = Vector2(396, 145)
+
+[node name="Pipes" parent="Background2" instance=ExtResource("6_ilpxg")]
+position = Vector2(256, 144)
+
+[node name="Notlemonade" parent="Background2" instance=ExtResource("7_3lbqp")]
+position = Vector2(256, 144)
+
 [node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
-position = Vector2(269, 131)
+position = Vector2(261, 134)
 
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(20, 104)
@@ -38,8 +66,11 @@ script = ExtResource("3_akmhw")
 position = Vector2(25, 37)
 shape = SubResource("RectangleShape2D_lyqfa")
 
-[node name="Button" parent="." instance=ExtResource("5_uiow5")]
-position = Vector2(3, -343)
+[node name="StopButton" parent="." instance=ExtResource("5_uiow5")]
+position = Vector2(135, -344)
+
+[node name="DestroyButton" parent="." instance=ExtResource("5_uiow5")]
+position = Vector2(208, -344)
 
 [node name="finishline" type="Area2D" parent="."]
 position = Vector2(13, -1)

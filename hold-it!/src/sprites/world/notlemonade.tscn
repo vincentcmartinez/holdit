@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmxnfmtpbdj5b"]
+
+[ext_resource type="Texture2D" uid="uid://b0jrdfjmfitgc" path="res://src/sprites/world/NOT_lemonade-Sheet.png" id="1_xbuxp"]
+
+[sub_resource type="Animation" id="Animation_rab41"]
+resource_name = "animate"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_0ylm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hfu6c"]
+_data = {
+"RESET": SubResource("Animation_0ylm5"),
+"animate": SubResource("Animation_rab41")
+}
+
+[node name="Notlemonade" type="Sprite2D"]
+texture = ExtResource("1_xbuxp")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hfu6c")
+}
+autoplay = "animate"

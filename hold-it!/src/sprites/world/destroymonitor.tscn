@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://778i4ebgyodb"]
+
+[ext_resource type="PackedScene" uid="uid://dty7w8kfg4xdw" path="res://src/sprites/world/stopmonitor.tscn" id="1_hru2b"]
+
+[node name="Monitor" instance=ExtResource("1_hru2b")]
+type = 1
