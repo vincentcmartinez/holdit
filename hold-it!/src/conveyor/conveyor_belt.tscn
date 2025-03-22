@@ -52,18 +52,20 @@ collision_mask = 4
 script = ExtResource("1_cv484")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 5
+z_index = -1
 texture_filter = 1
+position = Vector2(0, 72)
 texture = ExtResource("1_8lmab")
 hframes = 3
 region_enabled = true
 region_rect = Rect2(0, 156.338, 1536, 131.662)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-78, 67.5)
+position = Vector2(-80, 51.5)
 shape = SubResource("RectangleShape2D_psv0d")
 
 [node name="ConveyorDetector" type="Area2D" parent="."]
+position = Vector2(-2, -16)
 collision_mask = 2
 input_pickable = false
 
