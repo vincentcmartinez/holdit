@@ -22,6 +22,7 @@ size = Vector2(34, 34)
 [node name="Base" parent="." index="0"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_no5cb")
+scale = Vector2(2, 2)
 texture = ExtResource("2_5yxjp")
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -31,11 +32,16 @@ shape = SubResource("RectangleShape2D_x70rd")
 shape = SubResource("RectangleShape2D_uh1y1")
 
 [node name="Dinoleftarm" parent="Parts" index="0" instance=ExtResource("3_h5i24")]
+scale = Vector2(2, 2)
 
 [node name="MonkeyRightarm" parent="Parts" index="1" instance=ExtResource("4_8ergn")]
+scale = Vector2(2, 2)
 
 [node name="Monkeyrightleg" parent="Parts" index="2" instance=ExtResource("5_hjcld")]
+scale = Vector2(2, 2)
 
 [node name="Dinoleftarm2" parent="Parts" index="3" instance=ExtResource("6_uadw4")]
+scale = Vector2(2, 2)
 
 [node name="Monkeyrightleg2" parent="Parts" index="4" instance=ExtResource("7_62nbx")]
+scale = Vector2(2, 2)

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dsqtsxji7wv37" path="res://src/game container/button.tscn" id="5_uiow5"]
 [ext_resource type="Script" path="res://src/game container/finishline.gd" id="6_iv6sq"]
 [ext_resource type="Texture2D" uid="uid://cwcdg2vknfne4" path="res://src/conveyor/Computer.png" id="7_rarj2"]
-[ext_resource type="PackedScene" uid="uid://dij0jdybkv3i" path="res://src/game container/trash_press.tscn" id="8_64byy"]
+[ext_resource type="PackedScene" path="res://src/game container/trash_press.tscn" id="8_64byy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
