@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://src/conveyor/conveyor_belt.gd" id="1_cv484"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psv0d"]
-size = Vector2(348, 35)
+size = Vector2(348, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fijah"]
-size = Vector2(346, 21.25)
+size = Vector2(346, 30.625)
 
 [sub_resource type="Animation" id="Animation_3f51g"]
 length = 0.001
@@ -61,7 +61,7 @@ region_enabled = true
 region_rect = Rect2(0, 156.338, 1536, 131.662)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-80, 51.5)
+position = Vector2(-80, 47)
 shape = SubResource("RectangleShape2D_psv0d")
 
 [node name="ConveyorDetector" type="Area2D" parent="."]
@@ -70,7 +70,7 @@ collision_mask = 2
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorDetector"]
-position = Vector2(-79, 39)
+position = Vector2(-79, 34.3125)
 shape = SubResource("RectangleShape2D_fijah")
 debug_color = Color(0.825627, 0.324785, 0.594709, 0.42)
 
