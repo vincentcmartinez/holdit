@@ -9,6 +9,8 @@ class_name Toy
 var spawn_cooldown = true
 var highlighted = false
 var crossed_finish = false
+@onready var popup = preload("res://src/menus/fixpopup.tscn")
+
 func _physics_process(delta: float) -> void:
 	#if on_conveyor_belt:
 		#position.x += 1
@@ -49,7 +51,10 @@ func die():
 
 
 func pause():
+	# for now
+	open_panel()
 	freeze = true
+	
 
 func unpause():
 	freeze = false
@@ -75,3 +80,7 @@ func _on_mouse_exited() -> void:
 
 func can_be_selected() -> bool:
 	return not spawn_cooldown and not crossed_finish # can be selected as long as its not falling
+	
+func open_panel():
+	var cur_popup = popup.instantiate()
+	add_child(cur_popup)
