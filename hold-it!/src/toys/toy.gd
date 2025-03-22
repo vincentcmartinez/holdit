@@ -5,6 +5,8 @@ class_name Toy
 @onready var evaluated:bool = false
 @onready var paused : bool = false
 @onready var parts = $Parts.get_children() # list of part objects, which each have validity
+@onready var popup = preload("res://src/menus/fixpopup.tscn")
+
 func _physics_process(delta: float) -> void:
 	#if on_conveyor_belt:
 		#position.x += 1
@@ -36,10 +38,17 @@ func die():
 
 
 func pause():
+	# for now
+	open_panel()
 	freeze = true
+	
 
 func unpause():
 	freeze = false
 	###
 	### code to run minigame?
 	###
+	
+func open_panel():
+	var cur_popup = popup.instantiate()
+	add_child(cur_popup)
