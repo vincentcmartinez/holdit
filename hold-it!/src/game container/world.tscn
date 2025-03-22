@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=12 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
+[ext_resource type="Texture2D" uid="uid://dfpjamq37uy80" path="res://src/sprites/world/platform.png" id="2_6oxbr"]
 [ext_resource type="PackedScene" uid="uid://pqo80022h03m" path="res://src/toys/toy_spawner.tscn" id="2_m53fk"]
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="3_akmhw"]
 [ext_resource type="PackedScene" uid="uid://dsqtsxji7wv37" path="res://src/game container/button.tscn" id="5_uiow5"]
@@ -18,8 +19,12 @@ size = Vector2(20, 133)
 [node name="World" type="Node2D"]
 script = ExtResource("1_ogvad")
 
-[node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
+[node name="Platform" type="Sprite2D" parent="."]
 position = Vector2(256, 144)
+texture = ExtResource("2_6oxbr")
+
+[node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
+position = Vector2(269, 131)
 
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(20, 104)

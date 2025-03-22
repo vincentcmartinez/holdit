@@ -52,7 +52,6 @@ collision_mask = 4
 script = ExtResource("1_cv484")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
 texture_filter = 1
 position = Vector2(0, 72)
 texture = ExtResource("1_8lmab")
@@ -61,6 +60,7 @@ region_enabled = true
 region_rect = Rect2(0, 156.338, 1536, 131.662)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-80, 47)
 shape = SubResource("RectangleShape2D_psv0d")
 
@@ -70,6 +70,7 @@ collision_mask = 2
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorDetector"]
+visible = false
 position = Vector2(-79, 34.3125)
 shape = SubResource("RectangleShape2D_fijah")
 debug_color = Color(0.825627, 0.324785, 0.594709, 0.42)
