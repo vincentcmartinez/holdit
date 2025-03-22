@@ -26,6 +26,7 @@ func set_invalid():
 	if invalid_part_sprite:
 		invalid_part_sprite.show()
 	return
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass 

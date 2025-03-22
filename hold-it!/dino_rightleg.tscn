@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca5t7peapsg5m"]
+
+[ext_resource type="Script" path="res://src/toys/toy_part.gd" id="1_p2i68"]
+
+[node name="ToyPart" type="Node2D"]
+script = ExtResource("1_p2i68")
