@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf525kvk0qahm"
-path="res://.godot/imported/IMG_0330.PNG-b25391d66b448206c08fd5939f3c1e11.ctex"
+path="res://.godot/imported/dino_leftarm.PNG-e8a43cb6f69122f710a71b432732f298.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/toys/dino/icons/IMG_0330.PNG"
-dest_files=["res://.godot/imported/IMG_0330.PNG-b25391d66b448206c08fd5939f3c1e11.ctex"]
+source_file="res://src/sprites/toys/dino/icons/dino_leftarm.PNG"
+dest_files=["res://.godot/imported/dino_leftarm.PNG-e8a43cb6f69122f710a71b432732f298.ctex"]
 
 [params]
 

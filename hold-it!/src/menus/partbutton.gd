@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func set_part(newpart:ToyPart):
 	part = newpart
-	texture_rect.texture = part.part_sprite.texture.duplicate()
-	texture_rect.scale = Vector2(2,2)
+	texture_rect.texture = part.get_icon()
+	texture_rect.scale = Vector2(1,1)
 	#add_child(part.part_sprite.duplicate(DUPLICATE_USE_INSTANTIATION))
 	return
 

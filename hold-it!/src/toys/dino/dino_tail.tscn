@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnlljy4ith5xk"]
+
+[ext_resource type="Script" path="res://src/toys/toy_part.gd" id="1_44yvm"]
+[ext_resource type="Texture2D" uid="uid://cc6jj05a70umj" path="res://src/sprites/toys/dino/dino_tail.PNG" id="2_bixav"]
+
+[node name="Dinoleftarm" type="Node2D"]
+script = ExtResource("1_44yvm")
+path_to_icon = "res://src/sprites/toys/dino/icons/dino_tail.PNG"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bixav")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cti3cx50yu8gp"
-path="res://.godot/imported/IMG_0327.PNG-6d152294329566af0f6788d8197ed1cd.ctex"
+uid="uid://c2ibyya043s3m"
+path="res://.godot/imported/dino_rightleg.PNG-6ff151aef60e0a3ec86c7735038896d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/toys/dino/icons/IMG_0327.PNG"
-dest_files=["res://.godot/imported/IMG_0327.PNG-6d152294329566af0f6788d8197ed1cd.ctex"]
+source_file="res://src/sprites/toys/dino/icons/dino_rightleg.PNG"
+dest_files=["res://.godot/imported/dino_rightleg.PNG-6ff151aef60e0a3ec86c7735038896d8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnf2kfm37x5x1"
-path="res://.godot/imported/IMG_0331.PNG-06f0ead5f7453a8c7dba63c495c36f4a.ctex"
+uid="uid://cti3cx50yu8gp"
+path="res://.godot/imported/dino_teeth.PNG-04ebd541e13aeeedcf9c30797066c683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/toys/dino/icons/IMG_0331.PNG"
-dest_files=["res://.godot/imported/IMG_0331.PNG-06f0ead5f7453a8c7dba63c495c36f4a.ctex"]
+source_file="res://src/sprites/toys/dino/icons/dino_teeth.PNG"
+dest_files=["res://.godot/imported/dino_teeth.PNG-04ebd541e13aeeedcf9c30797066c683.ctex"]
 
 [params]
 
