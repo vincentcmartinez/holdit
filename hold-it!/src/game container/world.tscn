@@ -40,47 +40,48 @@ texture = ExtResource("2_xuj56")
 [node name="Pipes" parent="." instance=ExtResource("6_ilpxg")]
 position = Vector2(256, 144)
 
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(256, 172)
+scale = Vector2(1, 0.8)
+texture = ExtResource("2_6oxbr")
+
+[node name="StopMonitor" parent="." instance=ExtResource("11_3nqr1")]
+z_index = 200
+z_as_relative = false
+position = Vector2(138, 145)
+
+[node name="Monitor" parent="." instance=ExtResource("12_xhb1n")]
+z_index = 200
+z_as_relative = false
+position = Vector2(396, 145)
+
 [node name="ComputerSprite2" type="Sprite2D" parent="."]
 z_index = 25
 position = Vector2(36, 60)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("4_lstpd")
 
-[node name="Background2" type="CanvasLayer" parent="."]
-
-[node name="StopMonitor" parent="Background2" instance=ExtResource("11_3nqr1")]
-z_index = 200
-z_as_relative = false
-position = Vector2(138, 145)
-
-[node name="Monitor" parent="Background2" instance=ExtResource("12_xhb1n")]
-z_index = 200
-z_as_relative = false
-position = Vector2(396, 145)
-
-[node name="Notlemonade" parent="Background2" instance=ExtResource("7_3lbqp")]
-z_index = 10
-z_as_relative = false
-position = Vector2(256, 144)
-
-[node name="Platform" type="Sprite2D" parent="Background2"]
-position = Vector2(256, 172)
-scale = Vector2(1, 0.8)
-texture = ExtResource("2_6oxbr")
-
-[node name="ComputerSprite" type="Sprite2D" parent="Background2"]
-z_index = 1
+[node name="ComputerSprite" type="Sprite2D" parent="."]
+z_index = 100
 position = Vector2(36, 60)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_rarj2")
 
-[node name="StopButton" parent="Background2" instance=ExtResource("5_uiow5")]
+[node name="Notlemonade" parent="." instance=ExtResource("7_3lbqp")]
+z_index = 10
+z_as_relative = false
+position = Vector2(256, 144)
+
+[node name="StopButton" parent="." instance=ExtResource("5_uiow5")]
 position = Vector2(135, -344)
 cooldown_s = 3
 
-[node name="DestroyButton" parent="Background2" instance=ExtResource("5_uiow5")]
+[node name="DestroyButton" parent="." instance=ExtResource("5_uiow5")]
 position = Vector2(208, -344)
 script = ExtResource("12_n8huv")
+
+[node name="Background2" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(20, 104)
@@ -107,4 +108,4 @@ position = Vector2(259, 91)
 
 [connection signal="body_entered" from="ToyBox" to="ToyBox" method="_on_body_entered"]
 
-[editable path="Background2/DestroyButton"]
+[editable path="DestroyButton"]
