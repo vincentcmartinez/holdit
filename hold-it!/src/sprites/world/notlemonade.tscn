@@ -1,6 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmxnfmtpbdj5b"]
+[gd_scene load_steps=7 format=3 uid="uid://dmxnfmtpbdj5b"]
 
 [ext_resource type="Texture2D" uid="uid://b0jrdfjmfitgc" path="res://src/sprites/world/NOT_lemonade-Sheet.png" id="1_xbuxp"]
+[ext_resource type="Shader" path="res://src/assets/shaders/liquid_wave.gdshader" id="2_wa0rr"]
+
+[sub_resource type="Animation" id="Animation_0ylm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_rab41"]
 resource_name = "animate"
@@ -19,28 +35,22 @@ tracks/0/keys = {
 "values": [3, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_0ylm5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hfu6c"]
 _data = {
 "RESET": SubResource("Animation_0ylm5"),
 "animate": SubResource("Animation_rab41")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cc85e"]
+shader = ExtResource("2_wa0rr")
+shader_parameter/HealthAmount = 0.8
+shader_parameter/HealthColor = Vector4(0.98, 0.84, 0.22, 1)
+shader_parameter/WaveSpeed = 5.0
+shader_parameter/WavePeriod = 2.0
+shader_parameter/WaveAmplitude = 0.35
+
 [node name="Notlemonade" type="Sprite2D"]
+clip_children = 2
 texture = ExtResource("1_xbuxp")
 hframes = 5
 
@@ -49,3 +59,10 @@ libraries = {
 "": SubResource("AnimationLibrary_hfu6c")
 }
 autoplay = "animate"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_cc85e")
+offset_left = 159.0
+offset_top = 102.0
+offset_right = 199.0
+offset_bottom = 128.0
