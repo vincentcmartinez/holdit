@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b0gjo001s45id"]
+[gd_scene load_steps=41 format=3 uid="uid://b0gjo001s45id"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_4iuuo"]
 [ext_resource type="Texture2D" uid="uid://clbtfjxswdhj3" path="res://src/assets/monitor_pause_pullup-_Copy-Sheet.png" id="2_8yus2"]
@@ -283,13 +283,14 @@ mouse_filter = 2
 wait_time = 2.5
 one_shot = true
 
-[connection signal="mouse_entered" from="VBoxContainer/play" to="." method="_on_play_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/play" to="." method="_on_play_mouse_exited"]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_5sb0f")
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
+[connection signal="mouse_entered" from="VBoxContainer/play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

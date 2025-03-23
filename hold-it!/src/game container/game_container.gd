@@ -23,8 +23,8 @@ func spawn_pause_menu():
 	add_child(pause_menu_inst)
 
 func game_over(score):
+	$AudioStreamPlayer.play()
 	$GameOver.visible = true
-	get_tree().paused = true
 	$Label.visible = true
 	$ScoreLabel.text = "Final Score: " + str(floor(score))
 	$ScoreLabel.visible = true

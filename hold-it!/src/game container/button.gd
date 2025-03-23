@@ -33,6 +33,7 @@ func _on_minigame_finished(passed):
 		cooldown()
 	
 func hold_it():
+	$AudioStreamPlayer.play()
 	sprite.play("pressed")
 	SignalBus.emit_signal("hold_it")
 	var animatic = holditscene.instantiate()

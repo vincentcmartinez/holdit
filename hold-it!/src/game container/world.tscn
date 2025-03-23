@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=21 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
@@ -16,8 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dty7w8kfg4xdw" path="res://src/sprites/world/stopmonitor.tscn" id="11_3nqr1"]
 [ext_resource type="Script" path="res://src/game container/destroy_button.gd" id="12_n8huv"]
 [ext_resource type="PackedScene" uid="uid://778i4ebgyodb" path="res://src/sprites/world/destroymonitor.tscn" id="12_xhb1n"]
-[ext_resource type="Script" path="res://src/game container/liveslabel.gd" id="17_jjkoo"]
 [ext_resource type="AudioStream" uid="uid://db501kve04oyr" path="res://src/assets/nightshiftatthefrogfactory (1).mp3" id="17_6lf5f"]
+[ext_resource type="Script" path="res://src/game container/liveslabel.gd" id="17_jjkoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
@@ -128,9 +128,9 @@ script = ExtResource("17_jjkoo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_6lf5f")
+volume_db = 10.0
 autoplay = true
 parameters/looping = true
-
 
 [connection signal="body_entered" from="ToyBox" to="ToyBox" method="_on_body_entered"]
 

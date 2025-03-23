@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("left_click") and activated:
+		$AudioStreamPlayer.play()
 		animated_sprite_2d.play("press_destroy")
 		animation_player.play("destroy")
 		await animation_player.animation_finished
