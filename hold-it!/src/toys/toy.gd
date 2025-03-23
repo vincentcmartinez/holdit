@@ -55,7 +55,7 @@ func _on_conveyor_belt_area_area_exited(area: Area2D) -> void:
 	evaluate()
 func _on_conveyor_belt_area_area_entered(area: Area2D) -> void:
 	spawn_cooldown = false
-	speed = 5
+	speed = get_tree().get_root().get_node("GameContainer/World").belt_speed
 	if area is FinishLine:
 		crossed_finish = true
 		if not evaluate():
@@ -70,8 +70,9 @@ func die():
 
 
 func pause():
-	freeze = true
-	speed = 0
+	if(!crossed_finish):
+		freeze = true
+		speed = 0
 	
 
 func unpause(_passed):
