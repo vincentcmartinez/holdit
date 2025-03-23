@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Node2D/AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $Node2D/Area2D/AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @onready var timer = $Timer
 var destroying = false
@@ -28,8 +29,10 @@ func _on_activate_destroy():
 	timer.start()
 	activated = true
 	SignalBus.emit_signal("hold_it") # pause belt (for now)
+	
 
 func _on_timer_timeout() -> void:
+	audio_stream_player.play()
 	finish()
 
 func finish():
