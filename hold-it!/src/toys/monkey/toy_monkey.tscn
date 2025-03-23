@@ -14,7 +14,7 @@ resource_local_to_scene = true
 size = Vector2(36, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1y1"]
-size = Vector2(39, 52)
+size = Vector2(39, 46)
 
 [node name="ToyMonkey" instance=ExtResource("1_dbqx1")]
 
@@ -29,7 +29,7 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_x70rd")
 
 [node name="CollisionShape2D" parent="ConveyorBeltArea" index="0"]
-position = Vector2(0.5, 7)
+position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_uh1y1")
 
 [node name="MonkeyRightarm" parent="Parts" index="0" instance=ExtResource("3_5576m")]

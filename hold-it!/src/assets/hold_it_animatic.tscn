@@ -44,6 +44,7 @@ _data = {
 script = ExtResource("1_gk0gn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 64
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(256, 144)
