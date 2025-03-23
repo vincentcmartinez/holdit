@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b0gjo001s45id"]
+[gd_scene load_steps=31 format=3 uid="uid://b0gjo001s45id"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_4iuuo"]
 [ext_resource type="Texture2D" uid="uid://clbtfjxswdhj3" path="res://src/assets/monitor_pause_pullup-_Copy-Sheet.png" id="2_8yus2"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bdlndw63n2lik" path="res://src/assets/PlayButton.png" id="3_wao5r"]
 [ext_resource type="Texture2D" uid="uid://b2b4te24d3ttp" path="res://src/assets/PlayPressed.png" id="4_arkj0"]
 [ext_resource type="Shader" path="res://src/assets/shaders/chromatic_aberration.gdshader" id="5_oi4m4"]
+[ext_resource type="Texture2D" uid="uid://wvigjsvngpww" path="res://src/assets/QUIT_button1.png" id="6_83p02"]
+[ext_resource type="Texture2D" uid="uid://cb1gnts1dryk6" path="res://src/assets/QUIT_button_pressed.png" id="7_7u184"]
+[ext_resource type="AudioStream" uid="uid://b5pcep5kxua1t" path="res://src/assets/meetingmyfrogquotastart.mp3" id="9_5sb0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekg4l"]
 atlas = ExtResource("2_8yus2")
@@ -165,28 +168,33 @@ script = ExtResource("1_4iuuo")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(256, 144)
 sprite_frames = SubResource("SpriteFrames_qurcn")
-animation = &"hide_screen"
+animation = &"main_menu"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -11.0
-offset_right = 1.0
-offset_bottom = 55.0
+offset_top = 1.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="play" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 texture_normal = ExtResource("3_wao5r")
 texture_pressed = ExtResource("4_arkj0")
 texture_hover = ExtResource("4_arkj0")
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_83p02")
+texture_pressed = ExtResource("7_7u184")
+texture_hover = ExtResource("7_7u184")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_psnsp")
@@ -198,5 +206,11 @@ mouse_filter = 2
 wait_time = 2.5
 one_shot = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_5sb0f")
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

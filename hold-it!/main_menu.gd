@@ -17,3 +17,7 @@ func _on_play_button_pressed() -> void:
 func _on_timer_timeout() -> void:
 	get_tree().get_root().get_node("GameContainer").spawn_world()
 	queue_free()
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().quit()
