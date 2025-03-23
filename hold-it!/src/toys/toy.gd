@@ -49,14 +49,14 @@ func _on_conveyor_belt_area_area_entered(area: Area2D) -> void:
 			SignalBus.emit_signal("life_lost")
 
 func die():
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.1).timeout
 	queue_free()
 	pass # Replace with function body.
 
 
 func pause():
 	# for now
-	freeze = true
+	#freeze = true
 	speed = 0
 	
 
