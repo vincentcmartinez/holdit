@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckbw5g2joojch"]
+[gd_scene load_steps=3 format=3 uid="uid://ckbw5g2joojch"]
 
 [ext_resource type="Script" path="res://src/game container/game_container.gd" id="1_248p0"]
-[ext_resource type="Script" path="res://src/game container/liveslabel.gd" id="2_qorfa"]
 [ext_resource type="PackedScene" uid="uid://bua0lpl5ijb75" path="res://src/game container/cursor.tscn" id="4_nrpv7"]
 
 [node name="GameContainer" type="Node2D"]
@@ -14,15 +13,3 @@ layer = 128
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-text = "Lives"
-script = ExtResource("2_qorfa")

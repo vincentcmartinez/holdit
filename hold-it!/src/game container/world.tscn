@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=20 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
@@ -12,10 +12,11 @@
 [ext_resource type="Script" path="res://src/game container/finishline.gd" id="6_iv6sq"]
 [ext_resource type="PackedScene" uid="uid://dmxnfmtpbdj5b" path="res://src/sprites/world/notlemonade.tscn" id="7_3lbqp"]
 [ext_resource type="Texture2D" uid="uid://cwcdg2vknfne4" path="res://src/conveyor/Computer.png" id="7_rarj2"]
-[ext_resource type="PackedScene" path="res://src/game container/trash_press.tscn" id="8_64byy"]
+[ext_resource type="PackedScene" uid="uid://dij0jdybkv3i" path="res://src/game container/trash_press.tscn" id="8_64byy"]
 [ext_resource type="PackedScene" uid="uid://dty7w8kfg4xdw" path="res://src/sprites/world/stopmonitor.tscn" id="11_3nqr1"]
 [ext_resource type="Script" path="res://src/game container/destroy_button.gd" id="12_n8huv"]
 [ext_resource type="PackedScene" uid="uid://778i4ebgyodb" path="res://src/sprites/world/destroymonitor.tscn" id="12_xhb1n"]
+[ext_resource type="Script" path="res://src/game container/liveslabel.gd" id="17_jjkoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
@@ -80,9 +81,6 @@ cooldown_s = 3
 position = Vector2(208, -344)
 script = ExtResource("12_n8huv")
 
-[node name="Background2" type="CanvasLayer" parent="."]
-visible = false
-
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(20, 104)
 scale = Vector2(0.4, 0.4)
@@ -105,6 +103,20 @@ shape = SubResource("RectangleShape2D_qajwm")
 
 [node name="trash_press" parent="." instance=ExtResource("8_64byy")]
 position = Vector2(259, 91)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 1.0
+offset_right = -26.0
+offset_bottom = 24.0
+grow_horizontal = 0
+text = "Lives"
+script = ExtResource("17_jjkoo")
 
 [connection signal="body_entered" from="ToyBox" to="ToyBox" method="_on_body_entered"]
 
