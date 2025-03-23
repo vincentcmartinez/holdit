@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b0gjo001s45id"]
+[gd_scene load_steps=41 format=3 uid="uid://b0gjo001s45id"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_4iuuo"]
 [ext_resource type="Texture2D" uid="uid://clbtfjxswdhj3" path="res://src/assets/monitor_pause_pullup-_Copy-Sheet.png" id="2_8yus2"]
@@ -9,7 +9,7 @@
 [ext_resource type="Shader" path="res://src/assets/shaders/chromatic_aberration.gdshader" id="5_oi4m4"]
 [ext_resource type="Texture2D" uid="uid://wvigjsvngpww" path="res://src/assets/QUIT_button1.png" id="6_83p02"]
 [ext_resource type="Texture2D" uid="uid://cb1gnts1dryk6" path="res://src/assets/QUIT_button_pressed.png" id="7_7u184"]
-[ext_resource type="AudioStream" uid="uid://b5pcep5kxua1t" path="res://src/assets/meetingmyfrogquotastart.mp3" id="9_5sb0f"]
+[ext_resource type="AudioStream" uid="uid://bs1ng076hhdmg" path="res://src/assets/meetingmyfrogquotafinal.mp3" id="10_4ip6e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekg4l"]
 atlas = ExtResource("2_8yus2")
@@ -283,13 +283,14 @@ mouse_filter = 2
 wait_time = 2.5
 one_shot = true
 
-[connection signal="mouse_entered" from="VBoxContainer/play" to="." method="_on_play_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/play" to="." method="_on_play_mouse_exited"]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_5sb0f")
+stream = ExtResource("10_4ip6e")
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
+[connection signal="mouse_entered" from="VBoxContainer/play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

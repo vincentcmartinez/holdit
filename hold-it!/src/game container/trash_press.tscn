@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://src/game container/trash_press.gd" id="1_1qfs3"]
 [ext_resource type="Texture2D" uid="uid://ny3qevctv7o0" path="res://src/assets/HydraullicPressAnimation.png" id="1_kkay2"]
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="2_apm7r"]
-[ext_resource type="AudioStream" uid="uid://dnsadper4mluw" path="res://src/assets/sounds/press_sound.wav" id="4_b022p"]
+[ext_resource type="AudioStream" uid="uid://nkfavc4kw3jh" path="res://src/assets/press_sound.wav" id="4_p7k3y"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dqxv"]
 size = Vector2(61, 20)
@@ -144,8 +145,9 @@ wait_time = 3.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_b022p")
-volume_db = -24.547
+stream = ExtResource("4_p7k3y")
+volume_db = 10.0
+
 
 [connection signal="body_entered" from="Node2D/Area2D" to="Node2D/Area2D" method="_on_body_entered"]
 [connection signal="animation_finished" from="Node2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	pressed = true
+	$AudioStreamPlayer.stop()
 	$VBoxContainer.queue_free()
 	var move_tween = create_tween()
 	move_tween.tween_property($Sprite2D, "global_position", Vector2(256,512), 1.5).set_trans(Tween.TRANS_CUBIC)
