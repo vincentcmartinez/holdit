@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfdnx46lbieaj"]
+
+[ext_resource type="Script" path="res://src/toys/toy_part.gd" id="1_xm5xd"]
+[ext_resource type="Texture2D" uid="uid://bj8lwvyuf7y25" path="res://src/sprites/toys/robot/IMG_0360.PNG" id="2_hbsvk"]
+
+[node name="Monkeyleftarm" type="Node2D"]
+script = ExtResource("1_xm5xd")
+path_to_icon = "res://src/sprites/toys/robot/icons/IMG_0359.PNG"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hbsvk")

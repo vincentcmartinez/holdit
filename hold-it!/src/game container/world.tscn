@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://src/game container/finishline.gd" id="6_iv6sq"]
 [ext_resource type="PackedScene" uid="uid://dmxnfmtpbdj5b" path="res://src/sprites/world/notlemonade.tscn" id="7_3lbqp"]
 [ext_resource type="Texture2D" uid="uid://cwcdg2vknfne4" path="res://src/conveyor/Computer.png" id="7_rarj2"]
-[ext_resource type="PackedScene" path="res://src/game container/trash_press.tscn" id="8_64byy"]
+[ext_resource type="PackedScene" uid="uid://dij0jdybkv3i" path="res://src/game container/trash_press.tscn" id="8_64byy"]
 [ext_resource type="PackedScene" uid="uid://dty7w8kfg4xdw" path="res://src/sprites/world/stopmonitor.tscn" id="11_3nqr1"]
 [ext_resource type="Script" path="res://src/game container/destroy_button.gd" id="12_n8huv"]
 [ext_resource type="PackedScene" uid="uid://778i4ebgyodb" path="res://src/sprites/world/destroymonitor.tscn" id="12_xhb1n"]

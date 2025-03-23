@@ -7,7 +7,7 @@ class_name ToySpawner
 @onready var toy_monkey = preload("res://src/toys/monkey/toy_monkey.tscn")
 @onready var toy_dino = preload("res://src/toys/dino/toy_dino.tscn")
 @onready var toy_bunny = preload("res://src/toys/bunny/toy_bunny.tscn")
-@onready var toys = [toy_dino, toy_monkey, toy_car, toy_bunny]
+@onready var toys = [toy_dino, toy_monkey, toy_car, toy_bunny, toy_robot]
 
 func _physics_process(delta: float) -> void:
 	pass
