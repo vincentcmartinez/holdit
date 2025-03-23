@@ -5,6 +5,7 @@ extends Node2D
 @export var cooldown_s:int
 var on_cooldown = false
 var select_timer:Timer
+var holditscene = preload("res://src/assets/hold_it_animatic.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
@@ -34,6 +35,8 @@ func _on_minigame_finished(passed):
 func hold_it():
 	sprite.play("pressed")
 	SignalBus.emit_signal("hold_it")
+	var animatic = holditscene.instantiate()
+	add_child(animatic)
 	paused = true
 	start_select_timer()
 
