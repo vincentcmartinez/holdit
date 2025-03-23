@@ -16,7 +16,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func start_anim(_passed):
 	animPlayer.play("move")
 	if not audioPlayer.playing:

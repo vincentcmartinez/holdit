@@ -15,6 +15,7 @@ size = Vector2(36, 44)
 size = Vector2(39, 52)
 
 [node name="ToyMonkey" instance=ExtResource("1_pjrmu")]
+evil_sprite_path = "res://src/sprites/toys/evil/IMG_0353.PNG"
 
 [node name="Base" parent="." index="0"]
 texture_filter = 1

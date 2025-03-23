@@ -2,10 +2,11 @@ extends Node2D
 class_name ToySpawner
 @onready var spawn_timer: Timer = $SpawnTimer
 
+@onready var toy_car = preload("res://src/toys/car/toy_car.tscn")
 @onready var toy_robot = preload("res://src/toys/robot/toy_robot.tscn")
 @onready var toy_monkey = preload("res://src/toys/monkey/toy_monkey.tscn")
 @onready var toy_dino = preload("res://src/toys/dino/toy_dino.tscn")
-@onready var toys = [toy_dino, toy_monkey]
+@onready var toys = [toy_dino, toy_monkey, toy_car]
 
 func _physics_process(delta: float) -> void:
 	pass

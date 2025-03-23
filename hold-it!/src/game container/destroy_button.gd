@@ -21,6 +21,8 @@ func _on_destroy_finished():
 	paused = false
 	
 func activate_destroy():
+	if GameInfo.paused:
+		return
 	sprite.play("pressed")
 	SignalBus.emit_signal("activate_destroy")
 	print("destroy btn pressed")
