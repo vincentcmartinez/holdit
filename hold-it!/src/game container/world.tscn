@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=18 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cwcdg2vknfne4" path="res://src/conveyor/Computer.png" id="7_rarj2"]
 [ext_resource type="PackedScene" uid="uid://dij0jdybkv3i" path="res://src/game container/trash_press.tscn" id="8_64byy"]
 [ext_resource type="PackedScene" uid="uid://dty7w8kfg4xdw" path="res://src/sprites/world/stopmonitor.tscn" id="11_3nqr1"]
+[ext_resource type="Script" path="res://src/game container/destroy_button.gd" id="12_n8huv"]
 [ext_resource type="PackedScene" uid="uid://778i4ebgyodb" path="res://src/sprites/world/destroymonitor.tscn" id="12_xhb1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
@@ -71,6 +72,7 @@ position = Vector2(135, -344)
 
 [node name="DestroyButton" parent="." instance=ExtResource("5_uiow5")]
 position = Vector2(208, -344)
+script = ExtResource("12_n8huv")
 
 [node name="finishline" type="Area2D" parent="."]
 position = Vector2(13, -1)
