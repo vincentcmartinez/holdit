@@ -22,17 +22,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("left_click") and activated:
 		animated_sprite_2d.play("press_destroy")
 		animation_player.play("destroy")
+		audio_stream_player.play()
 		await animation_player.animation_finished
 		finish()
 
 func _on_activate_destroy():
 	timer.start()
 	activated = true
+	audio_stream_player.play()
 	SignalBus.emit_signal("hold_it") # pause belt (for now)
 	
 
 func _on_timer_timeout() -> void:
-	audio_stream_player.play()
 	finish()
 
 func finish():
