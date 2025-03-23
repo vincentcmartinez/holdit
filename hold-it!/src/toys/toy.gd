@@ -55,12 +55,12 @@ func die():
 
 func pause():
 	# for now
-	freeze = true
+	#freeze = true
 	speed = 0
 	
 
 func unpause():
-	freeze = false
+	#freeze = false
 	speed = 5
 
 
