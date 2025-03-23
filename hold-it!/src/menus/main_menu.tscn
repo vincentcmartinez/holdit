@@ -9,7 +9,7 @@
 [ext_resource type="Shader" path="res://src/assets/shaders/chromatic_aberration.gdshader" id="5_oi4m4"]
 [ext_resource type="Texture2D" uid="uid://wvigjsvngpww" path="res://src/assets/QUIT_button1.png" id="6_83p02"]
 [ext_resource type="Texture2D" uid="uid://cb1gnts1dryk6" path="res://src/assets/QUIT_button_pressed.png" id="7_7u184"]
-[ext_resource type="AudioStream" uid="uid://b5pcep5kxua1t" path="res://src/assets/meetingmyfrogquotastart.mp3" id="9_5sb0f"]
+[ext_resource type="AudioStream" uid="uid://bs1ng076hhdmg" path="res://src/assets/meetingmyfrogquotafinal.mp3" id="10_4ip6e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekg4l"]
 atlas = ExtResource("2_8yus2")
@@ -284,7 +284,7 @@ wait_time = 2.5
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_5sb0f")
+stream = ExtResource("10_4ip6e")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
