@@ -2,6 +2,7 @@ class_name Gamecontainer extends Node2D
 
 @onready var main_menu_scene = preload("res://src/menus/main_menu.tscn")
 @onready var world_scene = preload("res://src/game container/world.tscn")
+@onready var pause_scene = preload("res://src/menus/pause_menu.tscn")
 var minigaming = false
 
 func _ready() -> void:
@@ -14,3 +15,7 @@ func spawn_main_menu():
 func spawn_world():
 	var world_inst = world_scene.instantiate()
 	add_child(world_inst)
+
+func spawn_pause_menu():
+	var pause_menu_inst = pause_scene.instantiate()
+	add_child(pause_menu_inst)
