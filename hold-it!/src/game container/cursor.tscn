@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://cursor.gd" id="1_tfg2r"]
 
 [node name="Cursor" type="Sprite2D"]
+process_mode = 3
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_ang1h")
 hframes = 4

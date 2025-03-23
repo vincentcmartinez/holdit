@@ -1,19 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhpajphsy41nw"]
+[gd_scene load_steps=9 format=3 uid="uid://ivviyvonul3r"]
 
 [ext_resource type="PackedScene" uid="uid://b02npsu86bos3" path="res://src/toys/toy.tscn" id="1_pb3k1"]
+[ext_resource type="Texture2D" uid="uid://0kr1if5ov4qc" path="res://src/sprites/toys/robot/IMG_0356.PNG" id="2_nopf2"]
+[ext_resource type="PackedScene" uid="uid://cfdnx46lbieaj" path="res://src/toys/robot/robot_boots.tscn" id="3_h36ip"]
+[ext_resource type="PackedScene" uid="uid://dcpddveuhkqrm" path="res://src/toys/robot/robot_gloves.tscn" id="4_u6k1c"]
+[ext_resource type="PackedScene" uid="uid://bbr05nedy6pdf" path="res://src/toys/robot/robot_helmet.tscn" id="5_ahn2x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_etj1t"]
+resource_local_to_scene = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x70rd"]
-size = Vector2(128, 125)
+size = Vector2(36, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1y1"]
-size = Vector2(139, 137)
+size = Vector2(39, 52)
 
-[node name="ToyRobot" instance=ExtResource("1_pb3k1")]
+[node name="ToyMonkey" instance=ExtResource("1_pb3k1")]
+evil_sprite_path = "res://src/sprites/toys/evil/IMG_0375.PNG"
+
+[node name="Base" parent="." index="0"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_etj1t")
+scale = Vector2(2, 2)
+texture = ExtResource("2_nopf2")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_x70rd")
 
 [node name="CollisionShape2D" parent="ConveyorBeltArea" index="0"]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_uh1y1")
+
+[node name="Monkeyleftarm" parent="Parts" index="0" instance=ExtResource("3_h36ip")]
+scale = Vector2(2, 2)
+
+[node name="Monkeyleftarm2" parent="Parts" index="1" instance=ExtResource("4_u6k1c")]
+scale = Vector2(2, 2)
+
+[node name="Monkeyleftarm3" parent="Parts" index="2" instance=ExtResource("5_ahn2x")]
+scale = Vector2(2, 2)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

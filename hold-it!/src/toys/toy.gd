@@ -70,8 +70,9 @@ func die():
 
 
 func pause():
-	freeze = true
-	speed = 0
+	if(!crossed_finish):
+		freeze = true
+		speed = 0
 	
 
 func unpause(_passed):

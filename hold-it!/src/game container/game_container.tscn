@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://src/game container/game_container.gd" id="1_248p0"]
 [ext_resource type="PackedScene" uid="uid://bua0lpl5ijb75" path="res://src/game container/cursor.tscn" id="4_nrpv7"]
+[ext_resource type="Script" path="res://src/game container/liveslabel.gd" id="2_qorfa"]
+[ext_resource type="PackedScene" path="res://src/game container/cursor.tscn" id="4_nrpv7"]
 
 [node name="GameContainer" type="Node2D"]
 script = ExtResource("1_248p0")

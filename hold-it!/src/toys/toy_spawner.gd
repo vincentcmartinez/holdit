@@ -5,6 +5,13 @@ class_name ToySpawner
 func start_game():
 	$SpawnTimer.start()
 
+@onready var toy_car = preload("res://src/toys/car/toy_car.tscn")
+@onready var toy_robot = preload("res://src/toys/robot/toy_robot.tscn")
+@onready var toy_monkey = preload("res://src/toys/monkey/toy_monkey.tscn")
+@onready var toy_dino = preload("res://src/toys/dino/toy_dino.tscn")
+@onready var toy_bunny = preload("res://src/toys/bunny/toy_bunny.tscn")
+@onready var toys = [toy_dino, toy_monkey, toy_car, toy_bunny, toy_robot]
+
 func _physics_process(delta: float) -> void:
 	$SpawnTimer.set_wait_time(get_parent().spawn_rate)
 	pass

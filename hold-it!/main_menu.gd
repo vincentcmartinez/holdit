@@ -33,3 +33,6 @@ func _on_play_mouse_entered() -> void:
 
 func _on_play_mouse_exited() -> void:
 	hovered = false
+
+func _on_texture_button_pressed() -> void:
+	get_tree().quit()
