@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckbw5g2joojch"]
 
 [ext_resource type="Script" path="res://src/game container/game_container.gd" id="1_248p0"]
+
 [ext_resource type="AudioStream" uid="uid://bqi5nk78hj34u" path="res://src/assets/fired.mp3" id="3_8uqvv"]
 [ext_resource type="PackedScene" uid="uid://bua0lpl5ijb75" path="res://src/game container/cursor.tscn" id="4_nrpv7"]
+
 
 [node name="GameContainer" type="Node2D"]
 script = ExtResource("1_248p0")

@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="2_apm7r"]
 [ext_resource type="AudioStream" uid="uid://nkfavc4kw3jh" path="res://src/assets/press_sound.wav" id="4_p7k3y"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dqxv"]
 size = Vector2(61, 20)
 
@@ -146,6 +147,7 @@ one_shot = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p7k3y")
 volume_db = 10.0
+
 
 [connection signal="body_entered" from="Node2D/Area2D" to="Node2D/Area2D" method="_on_body_entered"]
 [connection signal="animation_finished" from="Node2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
