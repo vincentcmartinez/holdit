@@ -28,6 +28,9 @@ func unpause():
 
 func _decrement_lives():
 	lives -= 1
+	if lives <= 0:
+		var world = get_tree().get_root().get_node("GameContainer/World")
+		world.game_over()
 
 func _on_activate_destroy():
 	destroying = true

@@ -7,17 +7,46 @@ class_name World
 @onready var toy_dino = preload("res://src/toys/dino/toy_dino.tscn")
 @onready var toy_bunny = preload("res://src/toys/bunny/toy_bunny.tscn")
 
-@onready var belt_speed = 5
-@onready var spawn_rate = 1.5
-@onready var toys = [toy_dino, toy_monkey, toy_car, toy_bunny]
+@onready var current_level = 0
+@onready var levels = ["level_0", "level_1", "level_2"]
+@onready var level_stats = {
+	"level_0" = {
+		"toys" = [toy_monkey, toy_bunny, toy_dino, toy_car],
+		"spawn_rate" = 1.5,
+		"belt_speed" = 5
+	},
+	"level_1" = {
+		"toys" = [toy_dino, toy_car],
+		"spawn_rate" = 1.5,
+		"belt_speed" = 5
+	},
+	"level_2" = {
+		"toys" = [toy_monkey, toy_bunny, toy_dino, toy_car],
+		"spawn_rate" = 1.5,
+		"belt_speed" = 5
+	}
+}
+
+@onready var belt_speed = level_stats.get(levels[current_level]).get("belt_speed")
+@onready var spawn_rate = level_stats.get(levels[current_level]).get("spawn_rate")
+@onready var toys = level_stats.get(levels[current_level]).get("toys")
 
 @onready var game_start = false
+@onready var score = 0
 
 var paused = false
 
 func start_game():
 	game_start = true
 	$ToySpawner.start_game()
+
+func game_over():
+	get_parent().game_over(score)
+	queue_free()
+
+func _physics_process(delta: float) -> void:
+	score += 0.1
+	$CanvasLayer/ScoreLabel.text = "Score: " + str(floor(score))
 
 func _ready():
 	start_game()

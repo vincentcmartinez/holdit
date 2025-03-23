@@ -22,7 +22,7 @@
 size = Vector2(122, 89)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajwm"]
-size = Vector2(20, 133)
+size = Vector2(227.5, 9.5)
 
 [node name="World" type="Node2D"]
 texture_filter = 1
@@ -98,13 +98,20 @@ position = Vector2(13, -1)
 script = ExtResource("6_iv6sq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finishline"]
-position = Vector2(359, 127)
+position = Vector2(337.75, 207)
 shape = SubResource("RectangleShape2D_qajwm")
 
 [node name="trash_press" parent="." instance=ExtResource("8_64byy")]
 position = Vector2(259, 91)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 166.0
+offset_top = 3.0
+offset_right = 209.0
+offset_bottom = 26.0
+text = "Score"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 1

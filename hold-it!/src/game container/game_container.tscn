@@ -13,3 +13,21 @@ layer = 128
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 201.0
+offset_top = 58.0
+offset_right = 313.0
+offset_bottom = 81.0
+text = "You are FIRED!"
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+offset_left = 182.0
+offset_top = 104.0
+offset_right = 234.0
+offset_bottom = 127.0
+text = "Score: "
+
+[node name="GameOver" type="Sprite2D" parent="."]

@@ -21,3 +21,10 @@ func spawn_world():
 func spawn_pause_menu():
 	var pause_menu_inst = pause_scene.instantiate()
 	add_child(pause_menu_inst)
+
+func game_over(score):
+	$GameOver.visible = true
+	get_tree().paused = true
+	$Label.visible = true
+	$ScoreLabel.text = "Final Score: " + str(floor(score))
+	$ScoreLabel.visible = true
