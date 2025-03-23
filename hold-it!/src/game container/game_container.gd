@@ -3,6 +3,8 @@ class_name Gamecontainer extends Node2D
 @onready var main_menu_scene = preload("res://src/menus/main_menu.tscn")
 @onready var world_scene = preload("res://src/game container/world.tscn")
 @onready var pause_scene = preload("res://src/menus/pause_menu.tscn")
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 var minigaming = false
 
 func _ready() -> void:
@@ -24,7 +26,8 @@ func spawn_pause_menu():
 
 func game_over(score):
 	$AudioStreamPlayer.play()
-	$GameOver.visible = true
+	#$GameOver.visible = true
 	$Label.visible = true
+	animated_sprite_2d.play("fired")
 	$ScoreLabel.text = "Final Score: " + str(floor(score))
 	$ScoreLabel.visible = true
