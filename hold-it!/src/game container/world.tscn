@@ -19,8 +19,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7mb5"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajwm"]
 size = Vector2(20, 133)
 

@@ -11,7 +11,7 @@ var highlighted = false
 var crossed_finish = false
 var speed = 0
 @onready var popup = preload("res://src/menus/fixpopup.tscn")
-
+var evil = false
 func _physics_process(delta: float) -> void:
 	position.x += speed
 	return
@@ -25,9 +25,12 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("left_click") and GameInfo.paused:
-		if highlighted and can_be_selected():
+		if highlighted and can_be_selected() and not GameInfo.destroying:
 			SignalBus.emit_signal("toy_selected")
 			open_panel()
+
+func is_evil():
+	return evil 
 
 func evaluate():
 	for part in parts:
@@ -55,8 +58,7 @@ func die():
 
 
 func pause():
-	# for now
-	#freeze = true
+	freeze = true
 	speed = 0
 	
 
