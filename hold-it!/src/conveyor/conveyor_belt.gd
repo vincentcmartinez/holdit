@@ -6,15 +6,15 @@ class_name ConveyorBelt
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animPlayer.play("move")
-	SignalBus.connect("hold_it", toggleAnimation)
-	SignalBus.connect("minigame_finished", toggleAnimation)
+	SignalBus.connect("hold_it", stop_anim)
+	SignalBus.connect("minigame_finished", start_anim)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func toggleAnimation():
-	if not animPlayer.is_playing():
-		animPlayer.play("move")
-	else:
-		animPlayer.stop()
+
+
+func start_anim(_passed):
+	animPlayer.play("move")
+func stop_anim():
+	animPlayer.stop()

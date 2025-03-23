@@ -5,6 +5,7 @@
 
 [node name="Monkeyrightleg" type="Node2D"]
 script = ExtResource("1_y0l0u")
+path_to_icon = "res://src/sprites/toys/monkey/icons/IMG_0341.PNG"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u63ts")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=18 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
@@ -18,12 +18,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
 size = Vector2(122, 89)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7mb5"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajwm"]
 size = Vector2(20, 133)
 
 [node name="World" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_ogvad")
+
+[node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
+position = Vector2(261, 134)
 
 [node name="Background2" type="CanvasLayer" parent="."]
 layer = -1
@@ -49,10 +54,9 @@ position = Vector2(396, 145)
 position = Vector2(256, 144)
 
 [node name="Notlemonade" parent="Background2" instance=ExtResource("7_3lbqp")]
+z_index = 10
+z_as_relative = false
 position = Vector2(256, 144)
-
-[node name="ConveyorBelt" parent="." instance=ExtResource("2_4m722")]
-position = Vector2(261, 134)
 
 [node name="ToySpawner" parent="." instance=ExtResource("2_m53fk")]
 position = Vector2(20, 104)
@@ -68,9 +72,15 @@ shape = SubResource("RectangleShape2D_lyqfa")
 
 [node name="StopButton" parent="." instance=ExtResource("5_uiow5")]
 position = Vector2(135, -344)
+cooldown_s = 3
 
 [node name="DestroyButton" parent="." instance=ExtResource("5_uiow5")]
 position = Vector2(208, -344)
+script = null
+
+[node name="AnimatedSprite2D" parent="DestroyButton" index="0"]
+modulate = Color(0.721569, 0.403922, 0.584314, 1)
+material = SubResource("CanvasItemMaterial_h7mb5")
 
 [node name="finishline" type="Area2D" parent="."]
 position = Vector2(13, -1)
@@ -90,3 +100,5 @@ texture = ExtResource("7_rarj2")
 position = Vector2(259, 91)
 
 [connection signal="body_entered" from="ToyBox" to="ToyBox" method="_on_body_entered"]
+
+[editable path="DestroyButton"]

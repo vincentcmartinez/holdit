@@ -26,6 +26,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("left_click") and GameInfo.paused:
 		if highlighted and can_be_selected():
+			SignalBus.emit_signal("toy_selected")
 			open_panel()
 
 func evaluate():
@@ -59,7 +60,7 @@ func pause():
 	speed = 0
 	
 
-func unpause():
+func unpause(_passed):
 	freeze = false
 	speed = 5
 
