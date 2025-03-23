@@ -10,7 +10,7 @@ func _ready() -> void:
 	SignalBus.connect("destroy_finished", _on_destroy_finished)
 		
 func _input(event):
-	if(event.is_action_pressed("x") && !get_tree().paused && !paused):
+	if(event.is_action_pressed("start_destroy") && !get_tree().paused && !paused):
 		activate_destroy()
 	if(event.is_action_pressed("left_click") && !get_tree().paused && !paused):
 		var pos_diff = abs(get_viewport().get_mouse_position() - sprite.global_position)
