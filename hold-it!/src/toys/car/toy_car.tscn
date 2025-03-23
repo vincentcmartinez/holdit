@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1s564eseu5x6"]
+
+[ext_resource type="PackedScene" uid="uid://b02npsu86bos3" path="res://src/toys/toy.tscn" id="1_pjrmu"]
+[ext_resource type="Texture2D" uid="uid://634e8ab466so" path="res://src/sprites/toys/car/car_base.png" id="2_lkqlg"]
+[ext_resource type="PackedScene" uid="uid://dk4tuaosjgebw" path="res://src/toys/car/car_antenna.tscn" id="3_uhjww"]
+[ext_resource type="PackedScene" uid="uid://cbi7771ecnmgg" path="res://src/toys/car/car_wheels.tscn" id="4_myr2v"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_etj1t"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x70rd"]
+size = Vector2(36, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1y1"]
+size = Vector2(39, 52)
+
+[node name="ToyMonkey" instance=ExtResource("1_pjrmu")]
+evil_sprite_path = "res://src/sprites/toys/evil/IMG_0353.PNG"
+
+[node name="Base" parent="." index="0"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_etj1t")
+scale = Vector2(2, 2)
+texture = ExtResource("2_lkqlg")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_x70rd")
+
+[node name="CollisionShape2D" parent="ConveyorBeltArea" index="0"]
+position = Vector2(0.5, 7)
+shape = SubResource("RectangleShape2D_uh1y1")
+
+[node name="Monkeyleftarm" parent="Parts" index="0" instance=ExtResource("3_uhjww")]
+scale = Vector2(2, 2)
+
+[node name="Monkeyleftarm2" parent="Parts" index="1" instance=ExtResource("4_myr2v")]
+scale = Vector2(2, 2)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

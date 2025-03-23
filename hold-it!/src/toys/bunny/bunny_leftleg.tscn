@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cesybk0rrdnxo"]
+
+[ext_resource type="Script" path="res://src/toys/toy_part.gd" id="1_8204e"]
+[ext_resource type="Texture2D" uid="uid://cmt3561kqmwln" path="res://src/sprites/toys/bunny/l_leg_bunny.png" id="2_ywt2l"]
+
+[node name="Monkeyleftarm" type="Node2D"]
+script = ExtResource("1_8204e")
+path_to_icon = "res://src/sprites/toys/bunny/icons/IMG_0374.PNG"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ywt2l")

@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://8mia7wwr5ujm"]
+[gd_scene load_steps=6 format=3 uid="uid://8mia7wwr5ujm"]
 
 [ext_resource type="Script" path="res://src/menus/partbutton.gd" id="1_udbwr"]
+[ext_resource type="Texture2D" uid="uid://dri8qyp4qt3td" path="res://src/sprites/ui/IMG_0337.PNG" id="1_vedpw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7th6b"]
+texture = ExtResource("1_vedpw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_212i5"]
+texture = ExtResource("1_vedpw")
 
 [sub_resource type="Theme" id="Theme_ivxbg"]
+Button/styles/hover = SubResource("StyleBoxTexture_7th6b")
+Button/styles/normal = SubResource("StyleBoxTexture_212i5")
 
 [node name="Partbutton" type="Button"]
 custom_minimum_size = Vector2(32, 32)
@@ -24,3 +33,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 3
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

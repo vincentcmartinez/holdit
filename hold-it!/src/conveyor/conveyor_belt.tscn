@@ -79,3 +79,6 @@ debug_color = Color(0.825627, 0.324785, 0.594709, 0.42)
 libraries = {
 "": SubResource("AnimationLibrary_yq4g0")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"factory"

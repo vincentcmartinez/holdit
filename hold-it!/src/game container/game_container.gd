@@ -7,6 +7,8 @@ var minigaming = false
 
 func _ready() -> void:
 	spawn_main_menu()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	RenderingServer.set_default_clear_color(Color.BLACK)
 
 func spawn_main_menu():
 	var main_menu_inst = main_menu_scene.instantiate()

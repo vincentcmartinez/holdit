@@ -2,10 +2,12 @@ extends Node2D
 class_name ToySpawner
 @onready var spawn_timer: Timer = $SpawnTimer
 
+@onready var toy_car = preload("res://src/toys/car/toy_car.tscn")
 @onready var toy_robot = preload("res://src/toys/robot/toy_robot.tscn")
 @onready var toy_monkey = preload("res://src/toys/monkey/toy_monkey.tscn")
 @onready var toy_dino = preload("res://src/toys/dino/toy_dino.tscn")
-@onready var toys = [toy_dino]
+@onready var toy_bunny = preload("res://src/toys/bunny/toy_bunny.tscn")
+@onready var toys = [toy_dino, toy_monkey, toy_car, toy_bunny]
 
 func _physics_process(delta: float) -> void:
 	pass
@@ -25,5 +27,5 @@ func _on_spawn_timer_timeout() -> void:
 func _on_hold_it():
 	spawn_timer.paused = true
 
-func _on_minigame_finished():
+func _on_minigame_finished(_paused):
 	spawn_timer.paused = false
