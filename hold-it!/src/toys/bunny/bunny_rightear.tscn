@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://duuf22gcspy6u"]
+
+[ext_resource type="Script" path="res://src/toys/toy_part.gd" id="1_0kktn"]
+[ext_resource type="Texture2D" uid="uid://k8iafhk3x72t" path="res://src/sprites/toys/bunny/r_ear_bunny.png" id="2_0w21i"]
+
+[node name="Monkeyleftarm" type="Node2D"]
+script = ExtResource("1_0kktn")
+path_to_icon = "res://src/sprites/toys/bunny/icons/IMG_0371.PNG"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0w21i")

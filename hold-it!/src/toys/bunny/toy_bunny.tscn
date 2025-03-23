@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://dniosewmu6gle"]
+
+[ext_resource type="PackedScene" uid="uid://b02npsu86bos3" path="res://src/toys/toy.tscn" id="1_ahgqj"]
+[ext_resource type="Texture2D" uid="uid://cwd23nrsoc8er" path="res://src/sprites/toys/bunny/body_bunny.png" id="2_5bwdf"]
+[ext_resource type="Texture2D" uid="uid://cchcxtvkvnrg" path="res://src/sprites/toys/bunny/eye_bunny.png" id="3_hnio8"]
+[ext_resource type="Texture2D" uid="uid://cl0yqwvt2f7a6" path="res://src/sprites/toys/bunny/bow_bunny.png" id="4_s0fjw"]
+[ext_resource type="PackedScene" uid="uid://cesybk0rrdnxo" path="res://src/toys/bunny/bunny_leftleg.tscn" id="5_03ltv"]
+[ext_resource type="PackedScene" uid="uid://duuf22gcspy6u" path="res://src/toys/bunny/bunny_rightear.tscn" id="6_fv7gf"]
+[ext_resource type="PackedScene" uid="uid://dp1qsuv4npkte" path="res://src/toys/bunny/bunny_rightleg.tscn" id="7_qo85s"]
+[ext_resource type="PackedScene" uid="uid://hhlps1y8u6ao" path="res://src/toys/bunny/bunny_tutu.tscn" id="8_lnsx7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_etj1t"]
+resource_local_to_scene = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x70rd"]
+size = Vector2(36, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh1y1"]
+size = Vector2(39, 52)
+
+[node name="ToyMonkey" instance=ExtResource("1_ahgqj")]
+evil_sprite_path = "res://src/sprites/toys/evil/evil_bunny.png"
+
+[node name="Base" parent="." index="0"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_etj1t")
+scale = Vector2(2, 2)
+texture = ExtResource("2_5bwdf")
+
+[node name="eye" type="Sprite2D" parent="Base" index="0"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_etj1t")
+texture = ExtResource("3_hnio8")
+
+[node name="eye3" type="Sprite2D" parent="Base" index="1"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_etj1t")
+texture = ExtResource("4_s0fjw")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_x70rd")
+
+[node name="CollisionShape2D" parent="ConveyorBeltArea" index="0"]
+position = Vector2(0.5, 7)
+shape = SubResource("RectangleShape2D_uh1y1")
+
+[node name="Monkeyleftarm" parent="Parts" index="0" instance=ExtResource("5_03ltv")]
+scale = Vector2(2, 2)
+
+[node name="Monkeyleftarm2" parent="Parts" index="1" instance=ExtResource("6_fv7gf")]
+scale = Vector2(2, 2)
+
+[node name="Monkeyleftarm3" parent="Parts" index="2" instance=ExtResource("7_qo85s")]
+scale = Vector2(2, 2)
+
+[node name="Monkeyleftarm4" parent="Parts" index="3" instance=ExtResource("8_lnsx7")]
+scale = Vector2(2, 2)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
