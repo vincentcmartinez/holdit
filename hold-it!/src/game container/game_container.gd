@@ -5,7 +5,6 @@ class_name Gamecontainer extends Node2D
 @onready var pause_scene = preload("res://src/menus/pause_menu.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-var minigaming = false
 
 func _ready() -> void:
 	spawn_main_menu()
@@ -32,6 +31,7 @@ func game_over(score):
 	$ScoreLabel.text = "Final Score: " + str(floor(score))
 	$ScoreLabel.visible = true
 	await get_tree().create_timer(3).timeout
+	GameInfo.lives = 3
 	get_tree().change_scene_to_file("res://src/game container/game_container.tscn")
 
 func play_hurt():

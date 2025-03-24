@@ -27,6 +27,8 @@ func unpause():
 	paused = false
 
 func _decrement_lives():
+	if lives <= 0:
+		return
 	lives -= 1
 	if lives <= 0:
 		var world = get_tree().get_root().get_node("GameContainer/World")
