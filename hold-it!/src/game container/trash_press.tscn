@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dij0jdybkv3i"]
+[gd_scene load_steps=31 format=3 uid="uid://dij0jdybkv3i"]
 
 [ext_resource type="Script" path="res://src/game container/trash_press.gd" id="1_1qfs3"]
 [ext_resource type="Texture2D" uid="uid://ny3qevctv7o0" path="res://src/assets/HydraullicPressAnimation.png" id="1_kkay2"]
 [ext_resource type="Script" path="res://src/game container/toy_box.gd" id="2_apm7r"]
 [ext_resource type="AudioStream" uid="uid://nkfavc4kw3jh" path="res://src/assets/press_sound.wav" id="4_p7k3y"]
+[ext_resource type="Texture2D" uid="uid://dmw4args0rrhs" path="res://src/sprites/world/blue_explosion.png" id="4_wo2rj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dqxv"]
 size = Vector2(61, 20)
@@ -37,6 +38,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 113), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"midanim"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wk27i"]
@@ -109,6 +124,96 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5jtr"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvy30"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gido4"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afjdq"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g74in"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd6td"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmbqq"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjkof"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_178ob"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rmyb"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbs55"]
+atlas = ExtResource("4_wo2rj")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ucu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5jtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvy30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gido4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afjdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g74in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd6td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmbqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjkof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_178ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rmyb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbs55")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="trash_press" type="Node2D"]
 script = ExtResource("1_1qfs3")
 
@@ -139,13 +244,23 @@ animation = &"press_destroy"
 frame = 7
 frame_progress = 1.0
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 100
+z_as_relative = false
+position = Vector2(1, 68)
+scale = Vector2(1.39583, 1.625)
+sprite_frames = SubResource("SpriteFrames_1ucu5")
+animation = &"new_animation"
+speed_scale = 4.0
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p7k3y")
-volume_db = 10.0
+volume_db = 3.0
+bus = &"factory"
 
 [connection signal="body_entered" from="Node2D/Area2D" to="Node2D/Area2D" method="_on_body_entered"]
 [connection signal="animation_finished" from="Node2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

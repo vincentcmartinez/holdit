@@ -44,6 +44,7 @@ func hold_it():
 func cooldown():
 	on_cooldown = true
 	sprite.play("malfunction")
+	$buzz.play()
 	await get_tree().create_timer(cooldown_s).timeout
 	on_cooldown = false
 	sprite.play("idle")

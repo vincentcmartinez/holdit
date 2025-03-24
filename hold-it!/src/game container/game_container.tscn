@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckbw5g2joojch"]
+[gd_scene load_steps=17 format=3 uid="uid://ckbw5g2joojch"]
 
 [ext_resource type="Script" path="res://src/game container/game_container.gd" id="1_248p0"]
 [ext_resource type="AudioStream" uid="uid://bqi5nk78hj34u" path="res://src/assets/fired.mp3" id="3_8uqvv"]
 [ext_resource type="Texture2D" uid="uid://qawi7pk1b5xv" path="res://src/assets/YOU'RE FIRED-Sheet.png" id="4_a0jhg"]
 [ext_resource type="PackedScene" uid="uid://bua0lpl5ijb75" path="res://src/game container/cursor.tscn" id="4_nrpv7"]
+[ext_resource type="AudioStream" uid="uid://wskcymf6riiv" path="res://src/assets/551543__philracoindie__8-bit-denyerror-sound.wav" id="5_m0sle"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_058m5"]
 atlas = ExtResource("4_a0jhg")
@@ -122,3 +123,7 @@ sprite_frames = SubResource("SpriteFrames_nkhun")
 animation = &"fired"
 frame = 9
 frame_progress = 1.0
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m0sle")
+volume_db = 2.836

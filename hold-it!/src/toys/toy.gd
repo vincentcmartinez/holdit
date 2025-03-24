@@ -12,6 +12,7 @@ var crossed_finish = false
 var speed = 0
 @onready var popup = preload("res://src/menus/fixpopup.tscn")
 var evil = false
+var maybe_selectable = false
 func _physics_process(delta: float) -> void:
 	position.x += speed
 	return
@@ -70,14 +71,16 @@ func die():
 
 
 func pause():
+	maybe_selectable = true
 	if(!crossed_finish):
 		freeze = true
 		speed = 0
 	
 
 func unpause(_passed):
+	maybe_selectable = false
 	freeze = false
-	speed = 5
+	speed = get_tree().get_root().get_node("GameContainer/World").belt_speed
 
 
 func highlight():
@@ -88,7 +91,7 @@ func unhighlight():
 	highlighted = false
 
 func _on_mouse_entered() -> void:
-	if not highlighted:
+	if not highlighted and maybe_selectable:
 		if can_be_selected():
 			highlight()
 	pass # Replace with function body.

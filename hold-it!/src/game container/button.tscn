@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dsqtsxji7wv37"]
+[gd_scene load_steps=23 format=3 uid="uid://dsqtsxji7wv37"]
 
 [ext_resource type="Script" path="res://src/game container/button.gd" id="1_qecbr"]
 [ext_resource type="Texture2D" uid="uid://cgo0mmocil04n" path="res://src/assets/HOLD_IT_BUTTON-Sheet.png" id="1_r1f1i"]
 [ext_resource type="Texture2D" uid="uid://d3wisf6ycjs2r" path="res://src/assets/button_malfunction_sheet.png" id="3_wu6gy"]
 [ext_resource type="AudioStream" uid="uid://gao6ykjw3hnu" path="res://src/assets/holdit.mp3" id="4_bq5h7"]
+[ext_resource type="AudioStream" uid="uid://mvsth0hyvpfr" path="res://src/assets/buzz.mp3" id="5_k0ci7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvaia"]
 atlas = ExtResource("1_r1f1i")
@@ -145,3 +146,6 @@ animation = &"idle"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bq5h7")
+
+[node name="buzz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_k0ci7")
