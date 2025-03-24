@@ -19,8 +19,8 @@ func _ready() -> void:
 	add_to_group("Toy")
 	SignalBus.connect("hold_it", pause)
 	SignalBus.connect("minigame_finished", unpause)
-	var randnum = randi_range(0,10)
-	if randnum == 6:
+	var randnum = randi_range(0,3)
+	if randnum == 2:
 		set_evil()
 	#await get_tree().create_timer(0.5).timeout
 	#spawn_cooldown = false

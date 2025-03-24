@@ -15,5 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Toy:
 		if body.is_evil():
 			get_parent().get_parent().success = true
+		else:
+			SignalBus.emit_signal("life_lost")
 		body.die()
 	pass # Replace with function body.

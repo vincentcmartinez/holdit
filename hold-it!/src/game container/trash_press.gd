@@ -38,6 +38,7 @@ func _on_timer_timeout() -> void:
 	finish()
 
 func finish():
+	timer.stop()
 	activated = false
 	SignalBus.emit_signal("destroy_finished")
 	SignalBus.emit_signal("minigame_finished",success)
