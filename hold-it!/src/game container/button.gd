@@ -42,6 +42,7 @@ func hold_it():
 	start_select_timer()
 
 func cooldown():
+	select_timer.stop()
 	on_cooldown = true
 	sprite.play("malfunction")
 	$buzz.play()

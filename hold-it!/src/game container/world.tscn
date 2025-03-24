@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dt88jd310wh84"]
+[gd_scene load_steps=22 format=3 uid="uid://dt88jd310wh84"]
 
 [ext_resource type="Script" path="res://src/game container/world.gd" id="1_ogvad"]
 [ext_resource type="PackedScene" uid="uid://blwkon3ljy6cl" path="res://src/conveyor/conveyor_belt.tscn" id="2_4m722"]
 [ext_resource type="Texture2D" uid="uid://dfpjamq37uy80" path="res://src/sprites/world/platform.png" id="2_6oxbr"]
 [ext_resource type="PackedScene" uid="uid://pqo80022h03m" path="res://src/toys/toy_spawner.tscn" id="2_m53fk"]
-[ext_resource type="Script" path="res://src/game container/toy_box.gd" id="3_akmhw"]
 [ext_resource type="Texture2D" uid="uid://b5qp0n5h2g0bg" path="res://src/sprites/world/hold_it_background1.png" id="3_b0wf1"]
 [ext_resource type="Texture2D" uid="uid://cn03t2mikdmwj" path="res://src/conveyor/Computer2.png" id="4_lstpd"]
 [ext_resource type="PackedScene" uid="uid://dsqtsxji7wv37" path="res://src/game container/button.tscn" id="5_uiow5"]
@@ -18,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://778i4ebgyodb" path="res://src/sprites/world/destroymonitor.tscn" id="12_xhb1n"]
 [ext_resource type="AudioStream" uid="uid://db501kve04oyr" path="res://src/assets/nightshiftatthefrogfactory (1).mp3" id="17_6lf5f"]
 [ext_resource type="Script" path="res://src/game container/liveslabel.gd" id="17_jjkoo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyqfa"]
-size = Vector2(122, 89)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajwm"]
 size = Vector2(227.5, 9.5)
@@ -146,14 +142,6 @@ position = Vector2(256, 144)
 position = Vector2(20, 104)
 scale = Vector2(0.4, 0.4)
 
-[node name="ToyBox" type="Area2D" parent="."]
-position = Vector2(372, 205)
-script = ExtResource("3_akmhw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToyBox"]
-position = Vector2(25, 37)
-shape = SubResource("RectangleShape2D_lyqfa")
-
 [node name="finishline" type="Area2D" parent="."]
 position = Vector2(13, -1)
 script = ExtResource("6_iv6sq")
@@ -196,7 +184,5 @@ autoplay = "fade_in"
 stream = ExtResource("17_6lf5f")
 volume_db = 10.0
 parameters/looping = true
-
-[connection signal="body_entered" from="ToyBox" to="ToyBox" method="_on_body_entered"]
 
 [editable path="DestroyButton"]

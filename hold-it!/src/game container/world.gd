@@ -15,7 +15,7 @@ var streams = [nightshift, robo]
 @onready var levels = ["level_0", "level_1", "level_2"]
 @onready var level_stats = {
 	"level_0" = {
-		"toys" = [toy_monkey, toy_bunny, toy_dino, toy_car],
+		"toys" = [toy_monkey, toy_bunny, toy_dino, toy_car, toy_robot],
 		"spawn_rate" = 1.5,
 		"belt_speed" = 5
 	},
@@ -25,7 +25,7 @@ var streams = [nightshift, robo]
 		"belt_speed" = 5
 	},
 	"level_2" = {
-		"toys" = [toy_monkey, toy_bunny, toy_dino, toy_car],
+		"toys" = [toy_monkey, toy_bunny, toy_dino, toy_car, toy_robot],
 		"spawn_rate" = 1.5,
 		"belt_speed" = 5
 	}

@@ -10,12 +10,13 @@ script = ExtResource("1_rb4ru")
 
 [node name="Base" type="Sprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="ConveyorBeltArea" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBeltArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.734267, 0.42138, 0.560261, 0.42)
 
 [node name="Parts" type="Node2D" parent="."]
 
